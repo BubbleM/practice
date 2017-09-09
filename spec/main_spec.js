@@ -12,20 +12,30 @@ var main = require("../lib/main.js");
 describe("测试描述", function(){
     sinon.spy(console, 'log');
 
-    it("测试用例1", function(){
+    it("收入汇总测试", function(){
 
-        var result = main();
-        var expect_string = '';
+      let order1 = 'U123 2016-06-02 09:00~10:00 A';
+      let order2 = 'U231 2016-06-02 10:00~12:00 A';
+      let order3 = 'U213 2016-06-03 20:00~22:00 A';
+      let order4 = 'U123 2016-06-02 09:00~10:00 A C';
+      var result = main();
+      var expect_string = '';
         
-        expect(expect_string).to.equal(result);
-    });
-
-    it("测试用例2", function(){
-
-        main();
-        var result = _.flatten(console.log.args).join("\n");
-        var expect_string = '';
-
-        expect(expect_string).to.equal(result);
+      expect(result).to.equal(`收⼊汇总
+---
+场地:A
+2016-06-02 09:00~10:00 违约⾦ 15元
+2016-06-02 10:00~12:00 60元
+2016-06-03 20:00~22:00 120元
+⼩计：195元
+场地:B
+2016-06-04 09:00~10:00 40元
+⼩计：40元
+场地:C
+⼩计：0元
+场地:D
+⼩计：0元
+---
+总计: 235元`);
     });
 });
