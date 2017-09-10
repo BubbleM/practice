@@ -48,7 +48,6 @@ describe("测试描述", function(){
     let order5 = 'U005 2017-08-05 09:00~11:00 D';
     let orders = [order1,order2,order3,order4,order5];
     var result = main(orders);
-    var expect_string = '';
 
     expect(result).to.equal(`收⼊汇总
 ---
@@ -75,8 +74,8 @@ describe("测试描述", function(){
     let order3 = 'U213 2016-06-03 20:00~22:00 A';
     let order4 = 'U311 2016-06-04 09:00~10:00 B';
     let order5 = 'U123 2016-06-02 09:00~10:00 A C';
-    var result = main();
-    var expect_string = '';
+    let orders = [order1, order2, order3, order4, order5];
+    var result = main(orders);
 
     expect(result).to.equal(`收⼊汇总
 ---
