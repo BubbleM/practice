@@ -101,7 +101,7 @@ describe("测试描述", function(){
     let order2 = 'U003 2017-08-01 18:00~20:00 A';
     let order3 = 'U002 2017-08-01 19:00~22:00 A C';
     let order4 = 'U002 2017-08-01 19:00~22:00 A C';
-    let order5 = 'U003 2017-08-01 18:00~20:00 A';
+    let order5 = 'U004 2017-08-01 18:00~20:00 A';
     let order6 = 'U003 2017-08-02 13:00~17:00 B';
     let orders = [order1,order2,order3,order4,order5,order6];
     var result = main(orders);
@@ -109,8 +109,8 @@ describe("测试描述", function(){
     expect(result).to.equal(`收⼊汇总
 ---
 场地:A
+2017-08-01 19:00~22:00 违约金 100元
 2017-08-01 18:00~20:00 160元
-2017-08-01 19:00~22:00 违约⾦ 100元
 ⼩计：260元
 场地:B
 2017-08-02 13:00~17:00 200元
