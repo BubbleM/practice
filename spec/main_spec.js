@@ -8,12 +8,10 @@ chai.use(sinonChai);
 
 var main = require("../lib/main.js");
 
-
 describe("测试描述", function(){
     sinon.spy(console, 'log');
 
     it("收入汇总测试", function(){
-
       let order1 = 'U123 2016-06-02 09:00~10:00 A';
       let order2 = 'U231 2016-06-02 10:00~12:00 A';
       let order3 = 'U213 2016-06-03 20:00~22:00 A';
@@ -40,7 +38,6 @@ describe("测试描述", function(){
     });
 
   it("取消预约扣除违约金收入测试", function(){
-
     let order1 = 'U123 2016-06-02 09:00~10:00 A';
     let order2 = 'U231 2016-06-02 10:00~12:00 A';
     let order3 = 'U213 2016-06-03 20:00~22:00 A';
@@ -68,7 +65,6 @@ describe("测试描述", function(){
   });
 
   it("测试用例1", function(){
-
     let order1 = 'U001 2016-06-02 22:00~22:00 A';
     let order2 = 'U002 2017-08-01 19:00~22:00 A';
     let order3 = 'U003 2017-08-02 13:00~17:00 B';
@@ -96,12 +92,11 @@ describe("测试描述", function(){
   });
 
   it("测试用例2", function(){
-
     let order1 = 'U002 2017-08-01 19:00~22:00 A';
     let order2 = 'U003 2017-08-01 18:00~20:00 A';
     let order3 = 'U002 2017-08-01 19:00~22:00 A C';
     let order4 = 'U002 2017-08-01 19:00~22:00 A C';
-    let order5 = 'U004 2017-08-01 18:00~20:00 A';
+    let order5 = 'U003 2017-08-01 18:00~20:00 A';
     let order6 = 'U003 2017-08-02 13:00~17:00 B';
     let orders = [order1,order2,order3,order4,order5,order6];
     var result = main(orders);
@@ -122,5 +117,4 @@ describe("测试描述", function(){
 ---
 总计: 460元`);
   });
-
 });
